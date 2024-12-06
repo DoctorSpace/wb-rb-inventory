@@ -1,0 +1,55 @@
+.inventory-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 4px; 
+}
+
+.item-common {
+  background-color: #e0e0e0; 
+}
+
+.item-rare {
+  background-color: #4caf50; 
+}
+
+.item-epic {
+  background-color: #9c27b0; 
+}
+
+.item-potion {
+  background-image: url("/images/potion-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-weapon {
+  background-image: url("/images/weapon-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-armor {
+  background-image: url("/images/armor-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-rarity {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
