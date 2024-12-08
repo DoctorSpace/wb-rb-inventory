@@ -20,7 +20,7 @@ export const Inventory = () => {
   useEffect(() => {
     const loadInventoryData = async () => {
       try {
-        const response = await fetch(`/data/inventory${select}.json`);
+        const response = await fetch(`/wb-rb-inventory/data/inventory${select}.json`);
         if (!response.ok) {
           throw new Error("Не удалось загрузить данные");
         }
