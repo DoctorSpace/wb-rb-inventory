@@ -31,7 +31,7 @@ export const InventoryItem = ({ item, inventoryWidth }: InventoryItemProps) => {
       }}
     >
       <img
-        src={`/images/${type}-${rarity}-icon.png`}
+        src={`/wb-rb-inventory/images/${type}-${rarity}-icon.png`}
         alt={type}
         style={{
           position: "absolute",
