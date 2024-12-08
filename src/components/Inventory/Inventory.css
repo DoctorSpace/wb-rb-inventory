@@ -3,6 +3,13 @@
   padding: 20px;
 }
 
+.inventory-select {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
 .error {
   color: red;
   font-size: 14px;

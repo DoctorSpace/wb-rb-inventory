@@ -17,22 +17,51 @@ export const InventoryGrid = ({
     .fill(null)
     .map(() => Array(width).fill(null));
 
+  const occupiedCells = new Set<string>();
+
+  const rarityClasses = {
+    common: "item-common",
+    rare: "item-rare",
+    epic: "item-epic",
+  };
+
   gridData.forEach((item) => {
     for (let row = item.y; row < item.y + item.height; row++) {
       for (let col = item.x; col < item.x + item.width; col++) {
+        const key = `${row}-${col}`;
         grid[row][col] = item;
+
+        if (row === item.y && col === item.x) {
+          occupiedCells.add(key);
+        }
       }
     }
   });
 
   return (
-    <div className="inventory-grid">
+    <div
+      className="inventory-grid"
+      style={{
+        gridTemplateColumns: `repeat(${width}, 1fr)`,
+        gridTemplateRows: `repeat(${height}, 1fr)`,
+      }}
+    >
       {grid.map((row, rowIndex) =>
-        row.map((cell, colIndex) => (
-          <div key={`${rowIndex}-${colIndex}`} className="cell">
-            {cell && <InventoryItem item={cell} />}
-          </div>
-        ))
+        row.map((cell, colIndex) => {
+          const key = `${rowIndex}-${colIndex}`;
+          const rarityClass =
+            cell && cell.rarity
+              ? rarityClasses[cell.rarity as Item["rarity"]]
+              : "";
+
+          return (
+            <div key={key} className={`cell ${rarityClass}`}>
+              {cell && occupiedCells.has(key) && (
+                <InventoryItem item={cell} inventoryWidth={width} />
+              )}
+            </div>
+          );
+        })
       )}
     </div>
   );

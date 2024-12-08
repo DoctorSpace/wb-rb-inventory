@@ -1,17 +1,17 @@
 import { Item } from "../types";
 
 interface IProps {
-  data: Item[];
+  items: Item[];
   INVENTORY_WIDTH: number;
   INVENTORY_HEIGHT: number;
 }
 
 export const validateInventoryData = ({
-  data,
+  items,
   INVENTORY_WIDTH,
   INVENTORY_HEIGHT,
 }: IProps) => {
-  for (const item of data) {
+  for (const item of items) {
     if (!["potion", "weapon", "armor"].includes(item.type)) {
       return `Неверный тип предмета: ${item.type}`;
     }
@@ -31,7 +31,7 @@ export const validateInventoryData = ({
       )})`;
     }
 
-    for (const otherItem of data) {
+    for (const otherItem of items) {
       if (otherItem === item) continue;
       const doesOverlap = !(
         item.x + item.width <= otherItem.x ||

@@ -1,4 +1,3 @@
-import React from "react";
 import "./InventoryItem.css";
 
 interface Item {
@@ -12,32 +11,38 @@ interface Item {
 
 interface InventoryItemProps {
   item: Item;
+  inventoryWidth: number;
 }
 
-export const InventoryItem: React.FC<InventoryItemProps> = ({ item }) => {
-  const { type, rarity, x, y, width, height } = item;
-
-  const rarityClasses = {
-    common: "item-common",
-    rare: "item-rare",
-    epic: "item-epic",
-  };
-
-  const typeClasses = {
-    potion: "item-potion",
-    weapon: "item-weapon",
-    armor: "item-armor",
-  };
+export const InventoryItem = ({ item, inventoryWidth }: InventoryItemProps) => {
+  const { rarity,type, width, height } = item;
+  const cell = 600 / inventoryWidth - 2;
 
   return (
     <div
-      className={`inventory-item ${rarityClasses[rarity]} ${typeClasses[type]}`}
+      className={"inventory-item"}
       style={{
-        gridColumn: `${x + 1} / span ${width}`,
-        gridRow: `${y + 1} / span ${height}`,
+        gridColumn: `span ${width}`,
+        gridRow: `span ${height}`,
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <span className="item-rarity">{type}</span>
+      <img
+        src={`/images/${type}-${rarity}-icon.png`}
+        alt={type}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: `${width * cell}px`,
+          height: `${height * cell}px`,
+          objectFit: "cover",
+        }}
+      />
+      {/* <span className="item-rarity">{rarity}</span> */}
     </div>
   );
 };
