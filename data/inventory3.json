@@ -1,0 +1,17 @@
+{
+    "inventory_width": 18, 
+    "inventory_height": 6, 
+    "items": [
+        { "type": "armor", "rarity": "epic", "x": 0, "y": 0, "width": 3, "height": 4 },
+        { "type": "armor", "rarity": "epic", "x": 3, "y": 0, "width": 3, "height": 4 },
+        { "type": "armor", "rarity": "epic", "x": 6, "y": 0, "width": 3, "height": 4 },
+        { "type": "armor", "rarity": "epic", "x": 9, "y": 0, "width": 3, "height": 4 },
+        { "type": "armor", "rarity": "epic", "x": 12, "y": 0, "width": 3, "height": 4 },
+        { "type": "armor", "rarity": "epic", "x": 15, "y": 0, "width": 3, "height": 4 },
+        { "type": "weapon", "rarity": "epic", "x": 0, "y": 4, "width": 5, "height": 1 },
+        { "type": "weapon", "rarity": "epic", "x": 5, "y": 4, "width": 5, "height": 1 },
+        { "type": "weapon", "rarity": "epic", "x": 10, "y": 4, "width": 5, "height": 1 },
+        { "type": "potion", "rarity": "epic", "x": 15, "y": 4, "width": 1, "height": 1 },
+        { "type": "potion", "rarity": "epic", "x": 16, "y": 4, "width": 1, "height": 1 },
+        { "type": "potion", "rarity": "epic", "x": 17, "y": 4, "width": 1, "height": 1 }
+]}
