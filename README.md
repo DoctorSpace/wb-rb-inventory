@@ -1,50 +1,12 @@
-# React + TypeScript + Vite
+# Курс "React.База" от tech.wb | "Игровой инвентарь"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+В этом репозитории я представляю решение Задания 6
 
-Currently, two official plugins are available:
+#### Задание:
+С помощью React-компонентов заверстать интерфейс инвентаря для видеоигры. Инвентарь представляет собой сетку из клеток фиксированного размера (например 12х8). Предметы могут быть разных типов (зелья, снаряжение, оружие), разной редкости (обычные, редкие, эпические) и иметь разные размеры: 1х1, 1х2, 2х1, 3х1, 2х2. Тип и редкость предмета должны отображаться на нём цветом или иконкой. Загрузка инвентаря должна происходить из json-файла. Подготовьте несколько разных json-файлов для демонстрации разных компоновок инвентаря, а также проверку на валидность json-файла чтобы через файл нельзя было описать невозможное распложение элеметов (например, 10 элементов размером 2х2 в одной строке при общей длине инвентаря в 10 клеток).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Вот что примерно имеется ввиду: <a href="https://raw.githubusercontent.com/qtervi/wb-react-data/c488c9590397988a7876c3a5470d8bfd439affdf/assets/inventory.png">ссылка на картинку-пример</a>
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Установка и запуск
+`npm install`
+`npm run dev`
